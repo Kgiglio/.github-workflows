@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actionsnome: CI 
+
+em: 
+  push: 
+    branches: [ "main" ] 
+  pull_request: 
+    branches: [ "main" ] 
+
+  workflow_dispatch: 
+
+jobs: 
+  build-job: run 
+    -on: ubuntu-latest 
+    steps: 
+      - usa: actions/checkout@v3 
+      - run : python3 -V 
+
+  test-job : run 
+    -on: ubuntu-latest 
+    steps: 
+      - use: actions/checkout@v3 
+      - run: python3 teste.py 
+
+  deploy-job: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - use: actions/ checkout@v3 
+      - execute: echo "Finalizado!"
